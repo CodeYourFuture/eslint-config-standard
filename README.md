@@ -2,7 +2,7 @@
 
 A standard ESLint configuration for all CYF examples/projects.
 
-## Usage
+## Usage
 
 Install this package along with ESLint itself:
 
