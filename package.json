@@ -1,0 +1,22 @@
+{
+  "name": "@codeyourfuture/eslint-config-cyf",
+  "version": "1.0.0",
+  "description": "A standard ESLint configuration for all CYF examples/projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeyourfuture/eslint-config.git"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Jonathan Sharpe <mail@jonrshar.pe>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeyourfuture/eslint-config/issues"
+  },
+  "homepage": "https://github.com/codeyourfuture/eslint-config#readme"
+}
