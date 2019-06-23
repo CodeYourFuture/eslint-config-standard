@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A standard ESLint configuration for all CYF examples/projects.",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [],
   "main": "index.js",
   "scripts": {
