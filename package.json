@@ -2,6 +2,8 @@
   "name": "@codeyourfuture/eslint-config-standard",
   "version": "1.0.0",
   "description": "A standard ESLint configuration for all CYF examples/projects.",
+  "private": false,
+  "files": [],
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
