@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codeyourfuture/eslint-config.git"
+    "url": "git+https://github.com/codeyourfuture/eslint-config-standard.git"
   },
   "keywords": [
     "eslint"
@@ -22,9 +22,9 @@
   "author": "Jonathan Sharpe <mail@jonrshar.pe>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/codeyourfuture/eslint-config/issues"
+    "url": "https://github.com/codeyourfuture/eslint-config-standard/issues"
   },
-  "homepage": "https://github.com/codeyourfuture/eslint-config#readme",
+  "homepage": "https://github.com/codeyourfuture/eslint-config-standard#readme",
   "devDependencies": {
     "eslint": "^6.0.0"
   },
