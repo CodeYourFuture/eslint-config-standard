@@ -38,7 +38,7 @@ This config starts from [`eslint:recommended`][1] then adds the following rules:
 | [brace-style] | `"1tbs", { "allowSingleLine": false }` | |
 | [comma-dangle] | `"always-multiline"` | 3 |
 | [curly] | | 2 |
-| [indent] | `2` | |
+| [indent] | `"tab"` | Tabs are [more accessible][2] |
 | [linebreak-style] | `"unix"` | |
 | [no-trailing-spaces] | | |
 | [no-unused-vars] | `{ "ignoreRestSiblings": true }` | |
@@ -49,6 +49,7 @@ This config starts from [`eslint:recommended`][1] then adds the following rules:
 | [semi] | | Students shouldn't have to memorise the [ASI rules] |
 
   [1]: https://eslint.org/docs/user-guide/configuring#using-eslintrecommended
+  [2]: https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/
 
   [arrow-parens]: https://eslint.org/docs/rules/arrow-parens
   [ASI rules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Automatic_semicolon_insertion
