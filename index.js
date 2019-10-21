@@ -3,6 +3,7 @@
 module.exports = {
 	extends: ["eslint:recommended"],
 	rules: {
+		"arrow-body-style": ["error", "always"],
 		"arrow-parens": "error",
 		"brace-style": ["error", "1tbs", { "allowSingleLine": false }],
 		"comma-dangle": ["error", "always-multiline"],
