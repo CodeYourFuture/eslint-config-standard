@@ -13,20 +13,12 @@ This configuration uses [SemVer], interpreted as follows:
   - **Patch** release (`x.y.z` -> `x.y.z+1`): bugfixes and tooling updates mean that code that previously passed
     linting **should** continue to pass after the update.
 
-  - **Minor** release (`x.y.z` -> `x.y+1.0`): a new rule means that code that previously passed linting **may not**
-    continue to pass after the update.
+  - **Minor** release (`x.y.z` -> `x.y+1.0`): *not used*.
 
-  - **Major** release (`x.y.z` -> `x+1.0.0`): a change to an existing rule means that code that previously passed
-    linting **will not** pass any more.
+  - **Major** release (`x.y.z` -> `x+1.0.0`): a new rule, or a change to an existing rule, means that code that
+    previously passed linting **will not** pass any more.
 
 Please bear these definitions in mind when reporting any bugs.
-
-The rules will likely get stricter over time, so if you want to opt out of new rules use tilde (`~`) to specify the
-version range in your `package.json`:
-
-```json
-"@codeyourfuture/eslint-config-standard": "~2.0.1",
-```
 
 ## Usage
 
