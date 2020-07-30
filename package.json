@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/codeyourfuture/eslint-config-standard#readme",
   "devDependencies": {
-    "eslint": "^7.5.0"
+    "eslint": "^6 || ^7"
   },
   "peerDependencies": {
-    "eslint": "^6.0.0 || ^7.0.0"
+    "eslint": "^6 || ^7"
   }
 }
