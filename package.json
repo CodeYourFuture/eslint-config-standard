@@ -29,6 +29,6 @@
     "eslint": "^6.0.0"
   },
   "peerDependencies": {
-    "eslint": "^6.0.0"
+    "eslint": "^7.5.0"
   }
 }
