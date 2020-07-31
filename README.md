@@ -62,6 +62,17 @@ This config starts from [`eslint:recommended`][1] then adds the following rules:
 | [quotes] | `"double"` | More likely to need `'` inside a string than `"` |
 | [semi] | | Students shouldn't have to memorise the [ASI rules] |
 
+## Development
+
+You can clone this repo and run `npm install` to install the development dependencies. Two scripts are provided:
+
+  - `lint`: uses the version of ESLint installed as a dev dependency to lint `index.js` against its own rules.
+
+  - `test`: runs `test.sh` to create a package, installs ESLint (version defined by the required environment variable
+    `ESLINT_VERSION`) and the current version of this configuration, then checks that there are no version conflicts
+    and lints `index.js`. E.g. `ESLINT_VERSION=6 npm run test` will test that this configuration works with the latest
+    version of ESLint 6.
+
   [1]: https://eslint.org/docs/user-guide/configuring#using-eslintrecommended
   [2]: https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/
 
