@@ -20,13 +20,16 @@
     "eslint"
   ],
   "author": "Jonathan Sharpe <mail@jonrshar.pe>",
+  "contributors" : [
+    "Aichi Chang <aichi.p.chang@gmail.com>"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/codeyourfuture/eslint-config-standard/issues"
   },
   "homepage": "https://github.com/codeyourfuture/eslint-config-standard#readme",
   "devDependencies": {
-    "eslint": "^6 || ^7"
+    "eslint": "^7.5.0"
   },
   "peerDependencies": {
     "eslint": "^6 || ^7"
