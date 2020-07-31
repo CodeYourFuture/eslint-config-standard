@@ -10,7 +10,7 @@ rm -rf "$TEST_DIR"
 
 # Get current package version and create tarball to install from
 pushd "$HERE"
-  PACKAGE_VERSION=$(jq -r '.version' package.json)
+  PACKAGE_VERSION=$(node -p 'require("./package.json").version')
   npm pack
 popd
 
