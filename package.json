@@ -1,6 +1,6 @@
 {
   "name": "@codeyourfuture/eslint-config-standard",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A standard ESLint configuration for all CYF examples/projects.",
   "private": false,
   "publishConfig": {
@@ -20,7 +20,7 @@
     "eslint"
   ],
   "author": "Jonathan Sharpe <mail@jonrshar.pe>",
-  "contributors" : [
+  "contributors": [
     "Aichi Chang <aichi.p.chang@gmail.com>"
   ],
   "license": "ISC",
