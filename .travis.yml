@@ -13,6 +13,8 @@ install:
 
 script:
   - npm run lint
+  - ESLINT_VERSION=6 npm run test
+  - ESLINT_VERSION=7 npm run test
 
 deploy:
   provider: npm
