@@ -1,6 +1,6 @@
 {
   "name": "@codeyourfuture/eslint-config-standard",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A standard ESLint configuration for all CYF examples/projects.",
   "private": false,
   "publishConfig": {
