@@ -1,7 +1,7 @@
 # CYF ESLint Configuration
 
 [![License](https://img.shields.io/npm/l/@codeyourfuture/eslint-config-standard.svg)](https://github.com/CodeYourFuture/eslint-config-standard/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/CodeYourFuture/eslint-config-standard.svg?branch=master)](https://travis-ci.org/CodeYourFuture/eslint-config-standard)
+[![Build Status](https://github.com/CodeYourFuture/eslint-config-standard/workflows/Node.js%20CI/badge.svg)](https://github.com/CodeYourFuture/eslint-config-standard/actions)
 [![NPM Version](https://img.shields.io/npm/v/@codeyourfuture/eslint-config-standard.svg)](https://www.npmjs.com/package/@codeyourfuture/eslint-config-standard)
 
 A standard ESLint configuration for all CYF examples/projects.
