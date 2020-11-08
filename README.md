@@ -49,6 +49,7 @@ This config starts from [`eslint:recommended`][1] then adds the following rules:
 | Rule | Config | Principles/rationale |
 |------|--------|----------------------|
 | [arrow-parens] | | 2, 3 |
+| [arrow-body-style] | `"always"` | 2 |
 | [brace-style] | `"1tbs", { "allowSingleLine": false }` | |
 | [comma-dangle] | `"always-multiline"` | 3 |
 | [curly] | | 2 |
@@ -76,6 +77,7 @@ You can clone this repo and run `npm install` to install the development depende
   [1]: https://eslint.org/docs/user-guide/configuring#using-eslintrecommended
   [2]: https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/
 
+  [arrow-body-style]: https://eslint.org/docs/rules/arrow-body-style
   [arrow-parens]: https://eslint.org/docs/rules/arrow-parens
   [ASI rules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Automatic_semicolon_insertion
   [brace-style]: https://eslint.org/docs/rules/brace-style
