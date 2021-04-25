@@ -6,7 +6,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [],
+  "files": [
+    "*.js"
+  ],
   "main": "index.js",
   "scripts": {
     "lint": "eslint --config .eslintrc.root *.js",

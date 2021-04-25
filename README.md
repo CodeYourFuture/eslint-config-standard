@@ -36,6 +36,8 @@ Then create an [ESLint config file] and add this config to the `"extends"` secti
 }
 ```
 
+Alternatively, for a slightly more permissive set of rules, you can extend `@codeyourfuture/eslint-config-standard/lax`.
+
 ## Principles
 
  1. **Errors only** - don't train students to ignore *any* output, all rules should either be `"error"` or `"off"`
@@ -46,21 +48,21 @@ Then create an [ESLint config file] and add this config to the `"extends"` secti
 
 This config starts from [`eslint:recommended`][1] then adds the following rules:
 
-| Rule | Config | Principles/rationale |
-|------|--------|----------------------|
-| [arrow-parens] | | 2, 3 |
-| [brace-style] | `"1tbs", { "allowSingleLine": false }` | |
-| [comma-dangle] | `"always-multiline"` | 3 |
-| [curly] | | 2 |
-| [indent] | `"tab"` | Tabs are [more accessible][2] |
-| [linebreak-style] | `"unix"` | |
-| [no-trailing-spaces] | | |
-| [no-unused-vars] | `{ "ignoreRestSiblings": true }` | |
-| [no-var] | | Stick with `let` and `const` for more predictable behaviour |
-| [object-curly-spacing] | `"always"` | |
-| [operator-linebreak] | `"before"` | |
-| [quotes] | `"double"` | More likely to need `'` inside a string than `"` |
-| [semi] | | Students shouldn't have to memorise the [ASI rules] |
+| Configuration| Rule | Setting | Principles/rationale |
+|---|---|---|---|
+| standard, lax | [arrow-parens] | | 2, 3 |
+| standard, lax | [brace-style] | `"1tbs", { "allowSingleLine": false }` | |
+| standard, lax | [comma-dangle] | `"always-multiline"` | 3 |
+| standard, lax | [curly] | | 2 |
+| standard | [indent] | `"tab"` | Tabs are [more accessible][2] |
+| standard | [linebreak-style] | `"unix"` | |
+| standard, lax | [no-trailing-spaces] | | |
+| standard, lax | [no-unused-vars] | `{ "ignoreRestSiblings": true }` | |
+| standard, lax | [no-var] | | Stick with `let` and `const` for more predictable behaviour |
+| standard, lax | [object-curly-spacing] | `"always"` | |
+| standard, lax | [operator-linebreak] | `"before"` | |
+| standard, lax | [quotes] | `"double"` | More likely to need `'` inside a string than `"` |
+| standard, lax | [semi] | | Students shouldn't have to memorise the [ASI rules] |
 
 ## Development
 

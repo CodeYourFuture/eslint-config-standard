@@ -31,7 +31,7 @@ cat > "$TEST_DIR/package.json" <<- EndOfMessage
     "env": {
       "node": true
     },
-    "extends": "@codeyourfuture/standard"
+    "extends": "@codeyourfuture/eslint-config-standard/lax"
   },
   "scripts": {
     "lint": "eslint"
