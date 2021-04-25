@@ -9,8 +9,9 @@
   "files": [],
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "test": "./test.sh"
+    "lint": "eslint --config .eslintrc.root *.js",
+    "test:examples": "./bin/examples.sh",
+    "test:install": "./bin/test.sh"
   },
   "repository": {
     "type": "git",

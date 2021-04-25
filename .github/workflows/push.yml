@@ -20,10 +20,11 @@ jobs:
           cyf-eslint-
     - run: npm ci
     - run: npm run lint
-    - run: npm run test
+    - run: npm run test:examples
+    - run: npm run test:install
       env:
         ESLINT_VERSION: 6
-    - run: npm run test
+    - run: npm run test:install
       env:
         ESLINT_VERSION: 7
   deploy:
