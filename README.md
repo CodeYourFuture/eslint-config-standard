@@ -13,7 +13,9 @@ This configuration uses [SemVer], interpreted as follows:
   - **Patch** release (`x.y.z` -> `x.y.z+1`): bugfixes and tooling updates mean that code that previously passed
     linting **should** continue to pass after the update.
 
-  - **Minor** release (`x.y.z` -> `x.y+1.0`): *not used*.
+  - **Minor** release (`x.y.z` -> `x.y+1.0`): a change to an existing rule means that code that previously failed
+    linting **may** now pass, or a new configuration means that code that previously passed linting **should**
+    continue to pass.
 
   - **Major** release (`x.y.z` -> `x+1.0.0`): a new rule, or a change to an existing rule, means that code that
     previously passed linting **will not** pass any more.
