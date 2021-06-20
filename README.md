@@ -63,7 +63,7 @@ This config starts from [`eslint:recommended`][1] then adds the following rules:
 | standard, lax | [no-var] | | Stick with `let` and `const` for more predictable behaviour |
 | standard, lax | [object-curly-spacing] | `"always"` | |
 | standard, lax | [operator-linebreak] | `"before"` | |
-| standard, lax | [quotes] | `"double"` | More likely to need `'` inside a string than `"` |
+| standard, lax | [quotes] | `"double", { "avoidEscape": true, "allowTemplateLiterals": false }` | More likely to need `'` inside a string than `"` |
 | standard, lax | [semi] | | Students shouldn't have to memorise the [ASI rules] |
 
 ## Development

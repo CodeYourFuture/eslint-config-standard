@@ -12,7 +12,7 @@ module.exports = {
 		"no-var": "error",
 		"object-curly-spacing": ["error", "always"],
 		"operator-linebreak": ["error", "before"],
-		"quotes": ["error", "double"],
+		"quotes": ["error", "double", { "avoidEscape": true, "allowTemplateLiterals": false }],
 		"semi": "error",
 	},
 };
