@@ -31,6 +31,7 @@
     "url": "https://github.com/codeyourfuture/eslint-config-standard/issues"
   },
   "homepage": "https://github.com/codeyourfuture/eslint-config-standard#readme",
+  "funding": "https://github.com/sponsors/CodeYourFuture",
   "devDependencies": {
     "eslint": "^7.5.0"
   },
