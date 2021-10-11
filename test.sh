@@ -28,6 +28,9 @@ cat > "$TEST_DIR/package.json" <<- EndOfMessage
   },
   "scripts": {
     "lint": "eslint"
+  },
+  "eslint": {
+    "extends": ["@codeyourfuture/standard"]
   }
 }
 EndOfMessage
