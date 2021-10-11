@@ -14,19 +14,27 @@ jobs:
     - run: npm ci
     - run: npm run lint
     - run: npm run test:examples
+  install:
+    runs-on: ubuntu-20.04
+    needs: build
+    strategy:
+      matrix:
+        eslint: [6, 7, 8]
+        node: [12, 14]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        cache: 'npm'
+        node-version: ${{ matrix.node }}
+    - run: npm ci
     - run: npm run test:install
       env:
-        ESLINT_VERSION: 6
-    - run: npm run test:install
-      env:
-        ESLINT_VERSION: 7
-    - run: npm run test:install
-      env:
-        ESLINT_VERSION: 8
+        ESLINT_VERSION: ${{ matrix.eslint }}
   deploy:
     runs-on: ubuntu-20.04
     if: startsWith(github.ref, 'refs/tags/v')
-    needs: build
+    needs: install
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
