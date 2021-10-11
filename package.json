@@ -33,9 +33,9 @@
   "homepage": "https://github.com/codeyourfuture/eslint-config-standard#readme",
   "funding": "https://github.com/sponsors/CodeYourFuture",
   "devDependencies": {
-    "eslint": "^7.5.0"
+    "eslint": "^8.0.0"
   },
   "peerDependencies": {
-    "eslint": "^6 || ^7"
+    "eslint": "^6 || ^7 || ^8"
   }
 }
