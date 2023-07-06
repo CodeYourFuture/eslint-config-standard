@@ -51,7 +51,7 @@ jobs:
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     - run: npm pack
-    - run: npm publish --provenance codeyourfuture-eslint-config-standard-*.tgz
+    - run: npm publish codeyourfuture-eslint-config-standard-*.tgz
     - run: |
         gh release create \
           '${{ github.ref_name }}' \
