@@ -5,6 +5,7 @@ set -euo pipefail
 # Initial setup
 echo "Testing with ESLint v$ESLINT_VERSION"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PACK="${PACK:-}"
 ROOT_DIR="$HERE/.."
 TEST_DIR="$ROOT_DIR/test"
 rm -rf "$TEST_DIR"
@@ -12,7 +13,9 @@ rm -rf "$TEST_DIR"
 # Get current package version and create tarball to install from
 pushd "$ROOT_DIR"
   PACKAGE_VERSION=$(node -p 'require("./package.json").version')
-  npm pack
+  if [[ ! "$PACK" = 'false' ]]; then
+    npm pack
+  fi
 popd
 
 # Create a basic test package with no warnings
@@ -52,4 +55,6 @@ popd
 
 # Tidy up
 rm -rf "$TEST_DIR"
-rm -f "$ROOT_DIR/codeyourfuture-eslint-config-standard-$PACKAGE_VERSION.tgz"
+if [[ ! "$PACK" = 'false' ]]; then
+  rm -f "$ROOT_DIR/codeyourfuture-eslint-config-standard-$PACKAGE_VERSION.tgz"
+fi
