@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codeyourfuture/eslint-config-standard.git"
+    "url": "https://github.com/codeyourfuture/eslint-config-standard"
   },
   "keywords": [
     "eslint"
