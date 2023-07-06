@@ -4,26 +4,26 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         cache: 'npm'
-        node-version: '16'
+        node-version: '18'
     - run: npm ci
     - run: npm run lint
     - run: npm run test:examples
   install:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: build
     strategy:
       matrix:
         eslint: [6, 7, 8]
-        node: [12, 14, 16]
+        node: [16, 18, 20]
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         cache: 'npm'
         node-version: ${{ matrix.node }}
@@ -32,14 +32,14 @@ jobs:
       env:
         ESLINT_VERSION: ${{ matrix.eslint }}
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: startsWith(github.ref, 'refs/tags/v')
     needs: install
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '18'
     - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
