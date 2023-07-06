@@ -56,7 +56,7 @@ This config starts from [`eslint:recommended`][1] then adds the following rules:
 | standard, lax | [brace-style] | `"1tbs", { "allowSingleLine": false }` | |
 | standard, lax | [comma-dangle] | `"always-multiline"` | 3 |
 | standard, lax | [curly] | | 2 |
-| standard | [indent] | `"tab"` | Tabs are [more accessible][2] |
+| standard | [indent] | `"tab", { "SwitchCase": 1 }` | Tabs are [more accessible][2] |
 | standard | [linebreak-style] | `"unix"` | |
 | standard, lax | [no-trailing-spaces] | | |
 | standard, lax | [no-unused-vars] | `{ "ignoreRestSiblings": true }` | |
