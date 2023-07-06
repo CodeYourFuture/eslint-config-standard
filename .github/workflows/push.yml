@@ -50,7 +50,8 @@ jobs:
     - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-    - run: npm publish --provenance
+    - run: npm pack
+    - run: npm publish --provenance codeyourfuture-eslint-config-standard-*.tgz
     - run: |
         gh release create \
           '${{ github.ref_name }}' \
