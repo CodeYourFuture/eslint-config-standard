@@ -5,7 +5,5 @@ module.exports = {
 	rules: {
 		"@stylistic/js/indent": ["error", "tab", { "SwitchCase": 1 }],
 		"@stylistic/js/linebreak-style": ["error", "unix"],
-		"indent": "off",
-		"linebreak-style": "off",
 	},
 };
