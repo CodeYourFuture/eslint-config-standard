@@ -11,16 +11,14 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: textbook/take-action@nodejs
       with:
-        cache: 'npm'
-        node-version: '18'
+        node-version: '20'
     - run: npm ci
     - run: npm run lint
     - run: npm run test:examples
     - run: npm pack
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         if-no-files-found: error
         name: package
@@ -31,18 +29,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        eslint: [6, 7, 8]
-        node: [16, 18, 20]
+        eslint: [ '8.40', '8' ]
+        node: [ '16.0', '16', '18', '20']
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: textbook/take-action@nodejs
       with:
-        cache: 'npm'
         node-version: ${{ matrix.node }}
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: package
-    - run: npm ci
     - run: npm run test:install
       env:
         ESLINT_VERSION: ${{ matrix.eslint }}
@@ -52,8 +47,8 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     needs: install
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
         with:
           name: package
       - run: |
@@ -68,14 +63,14 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     needs: install
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: textbook/take-action@nodejs
       with:
-        node-version: '18'
+        install: 'false'
+        node-version: '20'
     - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-    - uses: actions/download-artifact@v3
+    - uses: actions/download-artifact@v4
       with:
         name: package
     - run: npm publish codeyourfuture-eslint-config-standard-*.tgz

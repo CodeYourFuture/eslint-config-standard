@@ -36,7 +36,7 @@
     "eslint": "^8.44.0"
   },
   "peerDependencies": {
-    "eslint": "^6 || ^7 || ^8"
+    "eslint": "^8.40"
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "^1.5.4"
