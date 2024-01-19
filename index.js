@@ -3,7 +3,7 @@
 module.exports = {
 	extends: ["./lax"],
 	rules: {
-		"@stylistic/indent": ["error", "tab", { "SwitchCase": 1 }],
-		"@stylistic/linebreak-style": ["error", "unix"],
+		"@stylistic/js/indent": ["error", "tab", { "SwitchCase": 1 }],
+		"@stylistic/js/linebreak-style": ["error", "unix"],
 	},
 };

@@ -39,6 +39,6 @@
     "eslint": "^8.40"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin": "^1.5.4"
+    "@stylistic/eslint-plugin-js": "^1.5.4"
   }
 }
