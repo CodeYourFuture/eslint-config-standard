@@ -30,7 +30,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        eslint: [6, 7, 8, 9]
+        eslint: [8.27, 8, 9]
         node: [16, 18, 20]
         exclude:
           # ESLint v9 requires Node ^18.18.0 || ^20.9.0 || >=21.1.0
@@ -56,7 +56,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        eslint: [8, 9]
+        eslint: [8.27, 8, 9]
         node: [16, 18, 20]
         exclude:
           # ESLint v9 requires Node ^18.18.0 || ^20.9.0 || >=21.1.0

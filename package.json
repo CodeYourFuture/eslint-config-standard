@@ -11,7 +11,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --config .eslintrc.root *.js",
+    "lint": "eslint --config eslint.root.js *.js",
     "test:examples": "./bin/examples.sh",
     "test:install": "./bin/test.sh"
   },
@@ -36,6 +36,6 @@
     "eslint": "^8.44.0"
   },
   "peerDependencies": {
-    "eslint": "^6 || ^7 || ^8 || ^9"
+    "eslint": "^8.27 || ^9"
   }
 }

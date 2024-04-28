@@ -1,9 +1,10 @@
 "use strict";
+const lax = require("./lax");
 
 module.exports = {
-	extends: ["./lax"],
 	rules: {
-		"indent": ["error", "tab", { "SwitchCase": 1 }],
+		...lax.rules,
+		"indent": ["error", "tab", { SwitchCase: 1 }],
 		"linebreak-style": ["error", "unix"],
 	},
 };
