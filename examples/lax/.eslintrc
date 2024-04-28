@@ -3,5 +3,6 @@
     "es6": true,
     "node": true
   },
-  "extends": "../../lax"
+  "extends": "../../lax",
+  "root": true
 }
