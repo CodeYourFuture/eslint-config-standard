@@ -30,15 +30,33 @@ Install this package along with ESLint itself:
 npm install --save-dev eslint @codeyourfuture/eslint-config-standard
 ```
 
-Then create an [ESLint config file] and add this config to the `"extends"` section:
+Then create an [ESLint config file] and add this config:
+
+```javascript
+const cyfConfig = require("@codeyourfuture/eslint-config-standard");
+
+module.exports = [cyfConfig];
+```
+
+or using ES module syntax:
+
+```javascript
+import cyfConfig from "@codeyourfuture/eslint-config-standard";
+
+export default [cyfConfig];
+```
+
+Alternatively, for a slightly more permissive set of rules, you can use `@codeyourfuture/eslint-config-standard/lax`.
+
+### `.eslintrc`
+
+If you have not yet migrated to the newer ESLint "flat config", you can apply these rules to the [deprecated config] using `"extends"`:
 
 ```json
 {
   "extends": ["@codeyourfuture/standard"]
 }
 ```
-
-Alternatively, for a slightly more permissive set of rules, you can extend `@codeyourfuture/eslint-config-standard/lax`.
 
 ## Principles
 
@@ -89,7 +107,8 @@ You can clone this repo and run `npm install` to install the development depende
   [brace-style]: https://eslint.org/docs/rules/brace-style
   [comma-dangle]: https://eslint.org/docs/rules/comma-dangle
   [curly]: https://eslint.org/docs/rules/curly
-  [ESLint config file]: https://eslint.org/docs/user-guide/configuring
+  [deprecated config]: https://eslint.org/docs/latest/use/configure/configuration-files-deprecated
+  [ESLint config file]: https://eslint.org/docs/latest/use/configure/configuration-files
   [indent]: https://eslint.org/docs/rules/indent
   [linebreak-style]: https://eslint.org/docs/rules/linebreak-style
   [no-trailing-spaces]: https://eslint.org/docs/rules/no-trailing-spaces
