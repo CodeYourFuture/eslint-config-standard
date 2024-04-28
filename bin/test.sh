@@ -6,7 +6,7 @@ set -euo pipefail
 echo "Testing with ESLint v$ESLINT_VERSION"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PACK="${PACK:-}"
-ROOT_DIR="$HERE/.."
+ROOT_DIR="$(cd "$HERE/.." && pwd)"
 TEST_DIR="$ROOT_DIR/test"
 rm -rf "$TEST_DIR"
 
@@ -41,6 +41,34 @@ cat > "$TEST_DIR/package.json" <<- EndOfMessage
   }
 }
 EndOfMessage
+
+cat > "$TEST_DIR/.eslintrc" <<- EndOfMessage
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": "@codeyourfuture/eslint-config-standard/lax",
+  "parserOptions": {
+    "ecmaVersion": 9
+  }
+}
+EndOfMessage
+
+cat > "$TEST_DIR/eslint.config.js" <<- EndOfMessage
+const { node } = require("globals");
+const cyfConfig = require("@codeyourfuture/eslint-config-standard/lax");
+module.exports = [
+  {
+    languageOptions: {
+      ecmaVersion: 9,
+      globals: node,
+    },
+  },
+  cyfConfig,
+];
+EndOfMessage
+
 cp $ROOT_DIR/*.js $TEST_DIR
 
 # Make sure ESLint and the config install and lint without issues
@@ -50,7 +78,8 @@ pushd "$TEST_DIR"
   npm ls --depth 0  # see https://stackoverflow.com/a/63177495/3001761
 
   npm run lint -- --version
-  npm run lint -- *.js
+  ESLINT_USE_FLAT_CONFIG=false npm run lint -- *.js
+  ESLINT_USE_FLAT_CONFIG=true npm run lint -- *.js
 popd
 
 # Tidy up

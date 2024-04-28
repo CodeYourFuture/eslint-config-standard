@@ -25,13 +25,17 @@ jobs:
         if-no-files-found: error
         name: package
         path: codeyourfuture-eslint-config-standard-*.tgz
-  install:
+  test-eslintrc:
     runs-on: ubuntu-22.04
     needs: build
     strategy:
       matrix:
-        eslint: [6, 7, 8]
+        eslint: [8.27, 8, 9]
         node: [16, 18, 20]
+        exclude:
+          # ESLint v9 requires Node ^18.18.0 || ^20.9.0 || >=21.1.0
+          - eslint: 9
+            node: 16
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -44,12 +48,39 @@ jobs:
     - run: npm ci
     - run: npm run test:install
       env:
+        ESLINT_USE_FLAT_CONFIG: 'false'
         ESLINT_VERSION: ${{ matrix.eslint }}
         PACK: 'false'
+  test-flat-config:
+    runs-on: ubuntu-22.04
+    needs: build
+    strategy:
+      matrix:
+        eslint: [8.27, 8, 9]
+        node: [16, 18, 20]
+        exclude:
+          # ESLint v9 requires Node ^18.18.0 || ^20.9.0 || >=21.1.0
+          - eslint: 9
+            node: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: 'npm'
+          node-version: ${{ matrix.node }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: package
+      - run: npm ci
+      - run: npm run test:install
+        env:
+          ESLINT_USE_FLAT_CONFIG: 'true'
+          ESLINT_VERSION: ${{ matrix.eslint }}
+          PACK: 'false'
   deploy-github:
     runs-on: ubuntu-22.04
     if: startsWith(github.ref, 'refs/tags/v')
-    needs: install
+    needs: [test-eslintrc, test-flat-config]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
@@ -65,7 +96,7 @@ jobs:
   deploy-npm:
     runs-on: ubuntu-22.04
     if: startsWith(github.ref, 'refs/tags/v')
-    needs: install
+    needs: [test-eslintrc, test-flat-config]
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4

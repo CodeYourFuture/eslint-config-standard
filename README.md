@@ -30,7 +30,27 @@ Install this package along with ESLint itself:
 npm install --save-dev eslint @codeyourfuture/eslint-config-standard
 ```
 
-Then create an [ESLint config file] and add this config to the `"extends"` section:
+Then create an [ESLint config file] and add this config:
+
+```javascript
+const cyfConfig = require("@codeyourfuture/eslint-config-standard");
+
+module.exports = [cyfConfig];
+```
+
+or using ES module syntax:
+
+```javascript
+import cyfConfig from "@codeyourfuture/eslint-config-standard";
+
+export default [cyfConfig];
+```
+
+Alternatively, for a slightly more permissive set of rules, you can use `@codeyourfuture/eslint-config-standard/lax`.
+
+### `.eslintrc`
+
+If you have not yet migrated to the newer ESLint "flat config", you can apply these rules to the [deprecated config] using `"extends"`:
 
 ```json
 {
@@ -38,17 +58,15 @@ Then create an [ESLint config file] and add this config to the `"extends"` secti
 }
 ```
 
-Alternatively, for a slightly more permissive set of rules, you can extend `@codeyourfuture/eslint-config-standard/lax`.
-
 ## Principles
 
- 1. **Errors only** - don't train students to ignore *any* output, all rules should either be `"error"` or `"off"`
+ 1. **Errors only** - don't teach trainees to ignore *any* output, all rules should either be `"error"` or `"off"`
  2. **Maximise consistency** - where there are options (e.g. braces for single-line statements, parentheses around arrow function parameters), be consistent with the non-optional cases
- 3. **Minimise change set size** - keep commits small so students can focus on the important changes
+ 3. **Minimise change set size** - keep commits small so trainees can focus on the important changes
 
 ## Rules
 
-This config starts from [`eslint:recommended`][1] then adds the following rules:
+This config starts from [`js.configs.recommended`][1] then adds the following rules:
 
 | Configuration| Rule | Setting | Principles/rationale |
 |---|---|---|---|
@@ -64,7 +82,7 @@ This config starts from [`eslint:recommended`][1] then adds the following rules:
 | standard, lax | [object-curly-spacing] | `"always"` | |
 | standard, lax | [operator-linebreak] | `"before"` | |
 | standard, lax | [quotes] | `"double", { "avoidEscape": true, "allowTemplateLiterals": false }` | More likely to need `'` inside a string than `"` |
-| standard, lax | [semi] | | Students shouldn't have to memorise the [ASI rules] |
+| standard, lax | [semi] | | Trainees shouldn't have to memorise the [ASI rules] |
 
 ## Development
 
@@ -81,7 +99,7 @@ You can clone this repo and run `npm install` to install the development depende
     no version conflicts and lints `index.js`. E.g. `ESLINT_VERSION=6 npm run test` will test that this configuration
     works with the latest version of ESLint 6.
 
-  [1]: https://eslint.org/docs/user-guide/configuring#using-eslintrecommended
+  [1]: https://eslint.org/docs/latest/use/configure/configuration-files#using-predefined-configurations
   [2]: https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/
 
   [arrow-parens]: https://eslint.org/docs/rules/arrow-parens
@@ -89,7 +107,8 @@ You can clone this repo and run `npm install` to install the development depende
   [brace-style]: https://eslint.org/docs/rules/brace-style
   [comma-dangle]: https://eslint.org/docs/rules/comma-dangle
   [curly]: https://eslint.org/docs/rules/curly
-  [ESLint config file]: https://eslint.org/docs/user-guide/configuring
+  [deprecated config]: https://eslint.org/docs/latest/use/configure/configuration-files-deprecated
+  [ESLint config file]: https://eslint.org/docs/latest/use/configure/configuration-files
   [indent]: https://eslint.org/docs/rules/indent
   [linebreak-style]: https://eslint.org/docs/rules/linebreak-style
   [no-trailing-spaces]: https://eslint.org/docs/rules/no-trailing-spaces
