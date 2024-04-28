@@ -60,9 +60,9 @@ If you have not yet migrated to the newer ESLint "flat config", you can apply th
 
 ## Principles
 
- 1. **Errors only** - don't train students to ignore *any* output, all rules should either be `"error"` or `"off"`
+ 1. **Errors only** - don't teach trainees to ignore *any* output, all rules should either be `"error"` or `"off"`
  2. **Maximise consistency** - where there are options (e.g. braces for single-line statements, parentheses around arrow function parameters), be consistent with the non-optional cases
- 3. **Minimise change set size** - keep commits small so students can focus on the important changes
+ 3. **Minimise change set size** - keep commits small so trainees can focus on the important changes
 
 ## Rules
 
@@ -82,7 +82,7 @@ This config starts from [`eslint:recommended`][1] then adds the following rules:
 | standard, lax | [object-curly-spacing] | `"always"` | |
 | standard, lax | [operator-linebreak] | `"before"` | |
 | standard, lax | [quotes] | `"double", { "avoidEscape": true, "allowTemplateLiterals": false }` | More likely to need `'` inside a string than `"` |
-| standard, lax | [semi] | | Students shouldn't have to memorise the [ASI rules] |
+| standard, lax | [semi] | | Trainees shouldn't have to memorise the [ASI rules] |
 
 ## Development
 
