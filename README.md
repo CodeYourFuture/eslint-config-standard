@@ -66,7 +66,7 @@ If you have not yet migrated to the newer ESLint "flat config", you can apply th
 
 ## Rules
 
-This config starts from [`eslint:recommended`][1] then adds the following rules:
+This config starts from [`js.configs.recommended`][1] then adds the following rules:
 
 | Configuration| Rule | Setting | Principles/rationale |
 |---|---|---|---|
@@ -99,7 +99,7 @@ You can clone this repo and run `npm install` to install the development depende
     no version conflicts and lints `index.js`. E.g. `ESLINT_VERSION=6 npm run test` will test that this configuration
     works with the latest version of ESLint 6.
 
-  [1]: https://eslint.org/docs/user-guide/configuring#using-eslintrecommended
+  [1]: https://eslint.org/docs/latest/use/configure/configuration-files#using-predefined-configurations
   [2]: https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/
 
   [arrow-parens]: https://eslint.org/docs/rules/arrow-parens
