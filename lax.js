@@ -1,6 +1,7 @@
 "use strict";
 const { configs: { recommended } } = require("@eslint/js");
 
+/** @type {import("eslint").Linter.FlatConfig} */
 module.exports = {
 	rules: {
 		...recommended.rules,

@@ -6,14 +6,20 @@
   "publishConfig": {
     "access": "public"
   },
+  "type": "commonjs",
   "files": [
-    "*.js"
+    "*.d.ts",
+    "*.js",
+    "!eslint.root.js"
   ],
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "lint": "eslint --config eslint.root.js *.js",
     "test:examples": "./bin/examples.sh",
-    "test:install": "./bin/test.sh"
+    "test:install": "./bin/test.sh",
+    "pretypes": "del *.d.ts",
+    "types": "tsc"
   },
   "repository": {
     "type": "git",
@@ -33,7 +39,10 @@
   "homepage": "https://github.com/codeyourfuture/eslint-config-standard#readme",
   "funding": "https://github.com/sponsors/CodeYourFuture",
   "devDependencies": {
-    "eslint": "^9.1.1"
+    "@types/eslint": "^8.56.10",
+    "del-cli": "^5.1.0",
+    "eslint": "^9.1.1",
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "eslint": "^8.27 || ^9"

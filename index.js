@@ -1,6 +1,7 @@
 "use strict";
 const lax = require("./lax");
 
+/** @type {import("eslint").Linter.FlatConfig} */
 module.exports = {
 	rules: {
 		...lax.rules,

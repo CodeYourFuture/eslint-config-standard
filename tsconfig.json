@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "lib": ["ES2015"],
+    "module": "CommonJS",
+    "types": []
+  },
+  "exclude": ["eslint.root.js"],
+  "include": ["*.js"]
+}
