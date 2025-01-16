@@ -71,17 +71,17 @@ This config starts from the [ESLint] and [Stylistic] recommended rules then adds
 | standard, lax | [`@stylistic/arrow-parens`][arrow-parens] | | 2, 3 |
 | standard, lax | [`@stylistic/brace-style`][brace-style] | `"1tbs", { "allowSingleLine": false }` | |
 | standard, lax | [`@stylistic/comma-dangle`][comma-dangle] | `"always-multiline"` | 3 |
-| standard, lax | [`curly`][curly] | | 2 |
 | standard | [`@stylistic/indent`][indent] | `"tab", { "SwitchCase": 1 }` | Tabs are [more accessible][why-tabs] |
 | standard | [`@stylistic/linebreak-style`][linebreak-style] | `"unix"` | |
 | standard, lax | [`@stylistic/no-trailing-spaces`][no-trailing-spaces] | | |
-| standard, lax | [`no-unused-vars`][no-unused-vars] | `{ "ignoreRestSiblings": true }` | |
-| standard, lax | [`no-var`][no-var] | | Stick with `let` and `const` for more predictable behaviour |
-| standard, lax | [`@stylistic/object-curly-cpacing`][object-curly-spacing] | `"always"` | |
+| standard, lax | [`@stylistic/object-curly-spacing`][object-curly-spacing] | `"always"` | |
 | standard, lax | [`@stylistic/operator-linebreak`][operator-linebreak] | `"before"` | |
-| standard, lax | [`@stylistic/quote-pros`][quote-props] | `"as-needed"` | 3 |
+| standard, lax | [`@stylistic/quote-props`][quote-props] | `"as-needed"` | 3 |
 | standard, lax | [`@stylistic/quotes`][quotes] | `"double", { "avoidEscape": true, "allowTemplateLiterals": false }` | More likely to need `'` inside a string than `"` |
 | standard, lax | [`@stylistic/semi`][semi] | | Learners shouldn't have to memorise the [ASI rules] |
+| standard, lax | [`curly`][curly] | | 2 |
+| standard, lax | [`no-unused-vars`][no-unused-vars] | `{ "ignoreRestSiblings": true }` | |
+| standard, lax | [`no-var`][no-var] | | Stick with `let` and `const` for more predictable behaviour |
 
 ## Development
 
@@ -112,6 +112,7 @@ You can clone this repo and run `npm install` to install the development depende
   [no-var]: https://eslint.org/docs/rules/no-var
   [object-curly-spacing]: https://eslint.style/rules/default/object-curly-spacing
   [operator-linebreak]: https://eslint.style/rules/default/operator-linebreak
+  [quote-props]: https://eslint.style/rules/default/quote-props
   [quotes]: https://eslint.style/rules/default/quotes
   [semi]: https://eslint.style/rules/default/semi
   [SemVer]: https://semver.org/
