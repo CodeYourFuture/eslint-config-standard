@@ -33,56 +33,55 @@ npm install --save-dev eslint @codeyourfuture/eslint-config-standard
 Then create an [ESLint config file] and add this config:
 
 ```javascript
-const cyfConfig = require("@codeyourfuture/eslint-config-standard");
+const cyf = require("@codeyourfuture/eslint-config-standard");
 
-module.exports = [cyfConfig];
+module.exports = [...cyf.configs.standard];
 ```
 
 or using ES module syntax:
 
 ```javascript
-import cyfConfig from "@codeyourfuture/eslint-config-standard";
+import cyf from "@codeyourfuture/eslint-config-standard";
 
-export default [cyfConfig];
+export default [...cyf.configs.standard];
 ```
 
-Alternatively, for a slightly more permissive set of rules, you can use `@codeyourfuture/eslint-config-standard/lax`.
+Alternatively, for a slightly more permissive set of rules, you can use `cyf.configs.lax`.
 
-### `.eslintrc`
+You can also call `cyf.configure` with some rules to add/override your own settings:
 
-If you have not yet migrated to the newer ESLint "flat config", you can apply these rules to the [deprecated config] using `"extends"`:
-
-```json
-{
-  "extends": ["@codeyourfuture/standard"]
-}
+```javascript
+export default [...cyf.configure({
+  // ...
+})];
 ```
 
 ## Principles
 
- 1. **Errors only** - don't teach trainees to ignore *any* output, all rules should either be `"error"` or `"off"`
+ 1. **Errors only** - don't teach learners to ignore *any* output, all rules should either be `"error"` or `"off"`
  2. **Maximise consistency** - where there are options (e.g. braces for single-line statements, parentheses around arrow function parameters), be consistent with the non-optional cases
- 3. **Minimise change set size** - keep commits small so trainees can focus on the important changes
+ 3. **Minimise change set size** - keep commits small so learners can focus on the important changes
 
 ## Rules
 
-This config starts from [`js.configs.recommended`][1] then adds the following rules:
+This config starts from the [ESLint] and [Stylistic] recommended rules then adds the following:
 
 | Configuration| Rule | Setting | Principles/rationale |
 |---|---|---|---|
-| standard, lax | [arrow-parens] | | 2, 3 |
-| standard, lax | [brace-style] | `"1tbs", { "allowSingleLine": false }` | |
-| standard, lax | [comma-dangle] | `"always-multiline"` | 3 |
-| standard, lax | [curly] | | 2 |
-| standard | [indent] | `"tab", { "SwitchCase": 1 }` | Tabs are [more accessible][2] |
-| standard | [linebreak-style] | `"unix"` | |
-| standard, lax | [no-trailing-spaces] | | |
-| standard, lax | [no-unused-vars] | `{ "ignoreRestSiblings": true }` | |
-| standard, lax | [no-var] | | Stick with `let` and `const` for more predictable behaviour |
-| standard, lax | [object-curly-spacing] | `"always"` | |
-| standard, lax | [operator-linebreak] | `"before"` | |
-| standard, lax | [quotes] | `"double", { "avoidEscape": true, "allowTemplateLiterals": false }` | More likely to need `'` inside a string than `"` |
-| standard, lax | [semi] | | Trainees shouldn't have to memorise the [ASI rules] |
+| standard, lax | [`@stylistic/arrow-parens`][arrow-parens] | | 2, 3 |
+| standard, lax | [`@stylistic/brace-style`][brace-style] | `"1tbs", { "allowSingleLine": false }` | |
+| standard, lax | [`@stylistic/comma-dangle`][comma-dangle] | `"always-multiline"` | 3 |
+| standard, lax | [`curly`][curly] | | 2 |
+| standard | [`@stylistic/indent`][indent] | `"tab", { "SwitchCase": 1 }` | Tabs are [more accessible][why-tabs] |
+| standard | [`@stylistic/linebreak-style`][linebreak-style] | `"unix"` | |
+| standard, lax | [`@stylistic/no-trailing-spaces`][no-trailing-spaces] | | |
+| standard, lax | [`no-unused-vars`][no-unused-vars] | `{ "ignoreRestSiblings": true }` | |
+| standard, lax | [`no-var`][no-var] | | Stick with `let` and `const` for more predictable behaviour |
+| standard, lax | [`@stylistic/object-curly-cpacing`][object-curly-spacing] | `"always"` | |
+| standard, lax | [`@stylistic/operator-linebreak`][operator-linebreak] | `"before"` | |
+| standard, lax | [`@stylistic/quote-pros`][quote-props] | `"as-needed"` | 3 |
+| standard, lax | [`@stylistic/quotes`][quotes] | `"double", { "avoidEscape": true, "allowTemplateLiterals": false }` | More likely to need `'` inside a string than `"` |
+| standard, lax | [`@stylistic/semi`][semi] | | Learners shouldn't have to memorise the [ASI rules] |
 
 ## Development
 
@@ -96,26 +95,25 @@ You can clone this repo and run `npm install` to install the development depende
 
   - `test:install`: runs `bin/test.sh` to create a package, installs ESLint (version defined by the required
     environment variable `ESLINT_VERSION`) and the current version of this configuration, then checks that there are
-    no version conflicts and lints `index.js`. E.g. `ESLINT_VERSION=6 npm run test` will test that this configuration
-    works with the latest version of ESLint 6.
+    no version conflicts and lints `index.js`. E.g. `ESLINT_VERSION=9 npm run test` will test that this configuration
+    works with the latest version of ESLint 9.
 
-  [1]: https://eslint.org/docs/latest/use/configure/configuration-files#using-predefined-configurations
-  [2]: https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/
-
-  [arrow-parens]: https://eslint.org/docs/rules/arrow-parens
+  [arrow-parens]: https://eslint.style/rules/default/arrow-parens
   [ASI rules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Automatic_semicolon_insertion
-  [brace-style]: https://eslint.org/docs/rules/brace-style
-  [comma-dangle]: https://eslint.org/docs/rules/comma-dangle
+  [brace-style]: https://eslint.style/rules/default/brace-style
+  [comma-dangle]: https://eslint.style/rules/default/comma-dangle
   [curly]: https://eslint.org/docs/rules/curly
-  [deprecated config]: https://eslint.org/docs/latest/use/configure/configuration-files-deprecated
+  [eslint]: https://eslint.org/
   [ESLint config file]: https://eslint.org/docs/latest/use/configure/configuration-files
-  [indent]: https://eslint.org/docs/rules/indent
-  [linebreak-style]: https://eslint.org/docs/rules/linebreak-style
-  [no-trailing-spaces]: https://eslint.org/docs/rules/no-trailing-spaces
+  [indent]: https://eslint.style/rules/default/indent
+  [linebreak-style]: https://eslint.style/rules/default/linebreak-style
+  [no-trailing-spaces]: https://eslint.style/rules/default/no-trailing-spaces
   [no-unused-vars]: https://eslint.org/docs/rules/no-unused-vars
   [no-var]: https://eslint.org/docs/rules/no-var
-  [object-curly-spacing]: https://eslint.org/docs/rules/object-curly-spacing
-  [operator-linebreak]: https://eslint.org/docs/rules/operator-linebreak
-  [quotes]: https://eslint.org/docs/rules/quotes
-  [semi]: https://eslint.org/docs/rules/semi
+  [object-curly-spacing]: https://eslint.style/rules/default/object-curly-spacing
+  [operator-linebreak]: https://eslint.style/rules/default/operator-linebreak
+  [quotes]: https://eslint.style/rules/default/quotes
+  [semi]: https://eslint.style/rules/default/semi
   [SemVer]: https://semver.org/
+  [stylistic]: https://eslint.style/
+  [why-tabs]: https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/

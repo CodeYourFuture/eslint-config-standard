@@ -3,11 +3,3 @@ const thing = {
 };
 
 console.log(thing);
-
-switch (thing) {
-	case true:
-		console.log("yes");
-		break;
-	default:
-		console.log("no");
-}

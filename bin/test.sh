@@ -30,34 +30,15 @@ cat > "$TEST_DIR/package.json" <<- EndOfMessage
     "type": "git",
     "url": "git+https://github.com/codeyourfuture/eslint-config-standard.git"
   },
-  "eslintConfig": {
-    "env": {
-      "node": true
-    },
-    "extends": "@codeyourfuture/eslint-config-standard/lax"
-  },
   "scripts": {
     "lint": "eslint"
   }
 }
 EndOfMessage
 
-cat > "$TEST_DIR/.eslintrc" <<- EndOfMessage
-{
-  "env": {
-    "es6": true,
-    "node": true
-  },
-  "extends": "@codeyourfuture/eslint-config-standard/lax",
-  "parserOptions": {
-    "ecmaVersion": 9
-  }
-}
-EndOfMessage
-
 cat > "$TEST_DIR/eslint.config.js" <<- EndOfMessage
 const { node } = require("globals");
-const cyfConfig = require("@codeyourfuture/eslint-config-standard/lax");
+const cyf = require("@codeyourfuture/eslint-config-standard");
 module.exports = [
   {
     languageOptions: {
@@ -65,7 +46,7 @@ module.exports = [
       globals: node,
     },
   },
-  cyfConfig,
+  ...cyf.configs.lax,
 ];
 EndOfMessage
 
@@ -78,8 +59,7 @@ pushd "$TEST_DIR"
   npm ls --depth 0  # see https://stackoverflow.com/a/63177495/3001761
 
   npm run lint -- --version
-  ESLINT_USE_FLAT_CONFIG=false npm run lint -- *.js
-  ESLINT_USE_FLAT_CONFIG=true npm run lint -- *.js
+  npm run lint -- *.js
 popd
 
 # Tidy up
