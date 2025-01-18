@@ -11,8 +11,11 @@ function configure(override = {}) {
 	return [
 		eslint.configs.recommended,
 		stylistic.configs.customize({
+			arrowParens: true,
+			commaDangle: "always-multiline",
 			flat: true,
 			indent: "tab",
+			quoteProps: "as-needed",
 			semi: true,
 		}),
 		{
@@ -20,15 +23,12 @@ function configure(override = {}) {
 				reportUnusedDisableDirectives: true,
 			},
 			rules: {
-				"@stylistic/arrow-parens": "error",
 				"@stylistic/brace-style": ["error", "1tbs", { allowSingleLine: false }],
-				"@stylistic/comma-dangle": ["error", "always-multiline"],
 				"@stylistic/indent": ["error", "tab", { SwitchCase: 1 }],
 				"@stylistic/linebreak-style": ["error", "unix"],
 				"@stylistic/no-trailing-spaces": "error",
 				"@stylistic/object-curly-spacing": ["error", "always"],
 				"@stylistic/operator-linebreak": ["error", "before"],
-				"@stylistic/quote-props": ["error", "as-needed"],
 				"@stylistic/quotes": [
 					"error",
 					"double",
