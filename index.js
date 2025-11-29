@@ -32,7 +32,7 @@ function configure(override = {}) {
 				"@stylistic/quotes": [
 					"error",
 					"double",
-					{ avoidEscape: true, allowTemplateLiterals: false },
+					{ avoidEscape: true, allowTemplateLiterals: "avoidEscape" },
 				],
 				curly: "error",
 				"no-unused-vars": ["error", { ignoreRestSiblings: true }],
