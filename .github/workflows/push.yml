@@ -31,7 +31,7 @@ jobs:
       fail-fast: false
       matrix:
         eslint: ['9']
-        node: ['lts/hydrogen', 'lts/iron', 'lts/jod', 'lts/krypton']
+        node: ['lts/iron', 'lts/jod', 'lts/krypton']
         include:
           - eslint: '9.0'
             node: '20.9'
