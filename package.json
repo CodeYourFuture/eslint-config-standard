@@ -42,7 +42,7 @@
     "@tsconfig/node20": "^20.1.8",
     "@types/eslint": "^9.6.1",
     "@types/node": "^20.19.25",
-    "del-cli": "^6.0.0",
+    "del-cli": "^7.0.0",
     "eslint": "^9.39.1",
     "typescript": "^5.9.3"
   },
