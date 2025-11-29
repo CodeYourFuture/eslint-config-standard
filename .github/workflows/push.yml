@@ -30,15 +30,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        eslint: ['8', '9']
+        eslint: ['9']
         node: ['lts/hydrogen', 'lts/iron', 'lts/jod', 'lts/krypton']
         include:
-          - eslint: '8.45'
-            node: '18.18'
-          - eslint: '8.45'
-            node: 'latest'
           - eslint: '9.0'
-            node: '18.18'
+            node: '20.9'
           - eslint: '9.0'
             node: 'latest'
     steps:
