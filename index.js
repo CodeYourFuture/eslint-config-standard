@@ -13,7 +13,6 @@ function configure(override = {}) {
 		stylistic.configs.customize({
 			arrowParens: true,
 			commaDangle: "always-multiline",
-			flat: true,
 			indent: "tab",
 			quoteProps: "as-needed",
 			semi: true,
