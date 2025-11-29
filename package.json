@@ -41,7 +41,7 @@
   "devDependencies": {
     "@tsconfig/node18": "^18.2.6",
     "@types/eslint": "^9.6.1",
-    "del-cli": "^6.0.0",
+    "del-cli": "^7.0.0",
     "eslint": "^9.39.1",
     "typescript": "^5.9.3"
   },
