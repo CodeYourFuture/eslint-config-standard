@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codeyourfuture/eslint-config-standard"
+    "url": "https://github.com/CodeYourFuture/eslint-config-standard"
   },
   "keywords": [
     "eslint"
@@ -34,9 +34,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/codeyourfuture/eslint-config-standard/issues"
+    "url": "https://github.com/CodeYourFuture/eslint-config-standard/issues"
   },
-  "homepage": "https://github.com/codeyourfuture/eslint-config-standard#readme",
+  "homepage": "https://github.com/CodeYourFuture/eslint-config-standard#readme",
   "funding": "https://github.com/sponsors/CodeYourFuture",
   "devDependencies": {
     "@tsconfig/node18": "^18.2.6",
