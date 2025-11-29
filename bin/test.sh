@@ -25,6 +25,7 @@ cat > "$TEST_DIR/package.json" <<- EndOfMessage
   "name": "test-package",
   "description": "Just a dummy package",
   "version": "0.0.1",
+  "type": "module",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -37,13 +38,13 @@ cat > "$TEST_DIR/package.json" <<- EndOfMessage
 EndOfMessage
 
 cat > "$TEST_DIR/eslint.config.js" <<- EndOfMessage
-const { node } = require("globals");
-const cyf = require("@codeyourfuture/eslint-config-standard");
-module.exports = [
+import globals from "globals";
+import cyf from "@codeyourfuture/eslint-config-standard";
+export default [
   {
     languageOptions: {
       ecmaVersion: 9,
-      globals: node,
+      globals: globals.node,
     },
   },
   ...cyf.configs.lax,
