@@ -5,8 +5,6 @@
     "checkJs": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "module": "CommonJS",
-    "moduleResolution": "node",
     "types": []
   },
   "exclude": ["eslint.root.js"],

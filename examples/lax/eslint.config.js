@@ -1,12 +1,12 @@
-const { node } = require("globals");
+import globals from "globals";
 
-const cyf = require("../..");
+import cyf from "../../index.js";
 
-/** @type {import("eslint").Linter.Config} */
-module.exports = [
+/** @type {import("eslint").Linter.Config[]} */
+export default [
 	{
 		languageOptions: {
-			globals: node,
+			globals: globals.node,
 		},
 	},
 	...cyf.configs.lax,

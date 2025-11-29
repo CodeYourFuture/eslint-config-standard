@@ -1,5 +1,5 @@
-const eslint = require("@eslint/js");
-const stylistic = require("@stylistic/eslint-plugin");
+import eslint from "@eslint/js";
+import stylistic from "@stylistic/eslint-plugin";
 
 /**
  * Create a configuration from the recommended base.
@@ -43,7 +43,7 @@ function configure(override = {}) {
 	];
 }
 
-module.exports = {
+export default {
 	configure,
 	configs: {
 		lax: configure({

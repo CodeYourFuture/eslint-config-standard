@@ -33,14 +33,6 @@ npm install --save-dev eslint @codeyourfuture/eslint-config-standard
 Then create an [ESLint config file] and add this config:
 
 ```javascript
-const cyf = require("@codeyourfuture/eslint-config-standard");
-
-module.exports = [...cyf.configs.standard];
-```
-
-or using ES module syntax:
-
-```javascript
 import cyf from "@codeyourfuture/eslint-config-standard";
 
 export default [...cyf.configs.standard];
