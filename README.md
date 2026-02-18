@@ -87,8 +87,8 @@ You can clone this repo and run `npm install` to install the development depende
 
   - `test:install`: runs `bin/test.sh` to create a package, installs ESLint (version defined by the required
     environment variable `ESLINT_VERSION`) and the current version of this configuration, then checks that there are
-    no version conflicts and lints `index.js`. E.g. `ESLINT_VERSION=9 npm run test` will test that this configuration
-    works with the latest version of ESLint 9.
+    no version conflicts and lints `index.js`. E.g. `ESLINT_VERSION=9 npm run test:install` will test that this
+    configuration works with the latest version of ESLint 9.
 
   [arrow-parens]: https://eslint.style/rules/default/arrow-parens
   [ASI rules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Automatic_semicolon_insertion

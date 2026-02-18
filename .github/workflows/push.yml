@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        eslint: ['9']
+        eslint: ['9', '10']
         node: ['lts/iron', 'lts/jod', 'lts/krypton']
         include:
           - eslint: '9.0'
